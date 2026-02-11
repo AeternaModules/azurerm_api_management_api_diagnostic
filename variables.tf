@@ -65,7 +65,7 @@ EOT
     always_log_errors         = optional(bool)
     http_correlation_protocol = optional(string)
     log_client_ip             = optional(bool)
-    operation_name_format     = optional(string, "Name")
+    operation_name_format     = optional(string) # Default: "Name"
     sampling_percentage       = optional(number)
     verbosity                 = optional(string)
     backend_request = optional(object({
