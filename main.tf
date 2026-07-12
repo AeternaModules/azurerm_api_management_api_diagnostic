@@ -21,14 +21,14 @@ resource "azurerm_api_management_api_diagnostic" "api_management_api_diagnostics
         for_each = backend_request.value.data_masking != null ? [backend_request.value.data_masking] : []
         content {
           dynamic "headers" {
-            for_each = data_masking.value.headers != null ? [data_masking.value.headers] : []
+            for_each = data_masking.value.headers != null ? data_masking.value.headers : []
             content {
               mode  = headers.value.mode
               value = headers.value.value
             }
           }
           dynamic "query_params" {
-            for_each = data_masking.value.query_params != null ? [data_masking.value.query_params] : []
+            for_each = data_masking.value.query_params != null ? data_masking.value.query_params : []
             content {
               mode  = query_params.value.mode
               value = query_params.value.value
@@ -48,14 +48,14 @@ resource "azurerm_api_management_api_diagnostic" "api_management_api_diagnostics
         for_each = backend_response.value.data_masking != null ? [backend_response.value.data_masking] : []
         content {
           dynamic "headers" {
-            for_each = data_masking.value.headers != null ? [data_masking.value.headers] : []
+            for_each = data_masking.value.headers != null ? data_masking.value.headers : []
             content {
               mode  = headers.value.mode
               value = headers.value.value
             }
           }
           dynamic "query_params" {
-            for_each = data_masking.value.query_params != null ? [data_masking.value.query_params] : []
+            for_each = data_masking.value.query_params != null ? data_masking.value.query_params : []
             content {
               mode  = query_params.value.mode
               value = query_params.value.value
@@ -75,14 +75,14 @@ resource "azurerm_api_management_api_diagnostic" "api_management_api_diagnostics
         for_each = frontend_request.value.data_masking != null ? [frontend_request.value.data_masking] : []
         content {
           dynamic "headers" {
-            for_each = data_masking.value.headers != null ? [data_masking.value.headers] : []
+            for_each = data_masking.value.headers != null ? data_masking.value.headers : []
             content {
               mode  = headers.value.mode
               value = headers.value.value
             }
           }
           dynamic "query_params" {
-            for_each = data_masking.value.query_params != null ? [data_masking.value.query_params] : []
+            for_each = data_masking.value.query_params != null ? data_masking.value.query_params : []
             content {
               mode  = query_params.value.mode
               value = query_params.value.value
@@ -102,14 +102,14 @@ resource "azurerm_api_management_api_diagnostic" "api_management_api_diagnostics
         for_each = frontend_response.value.data_masking != null ? [frontend_response.value.data_masking] : []
         content {
           dynamic "headers" {
-            for_each = data_masking.value.headers != null ? [data_masking.value.headers] : []
+            for_each = data_masking.value.headers != null ? data_masking.value.headers : []
             content {
               mode  = headers.value.mode
               value = headers.value.value
             }
           }
           dynamic "query_params" {
-            for_each = data_masking.value.query_params != null ? [data_masking.value.query_params] : []
+            for_each = data_masking.value.query_params != null ? data_masking.value.query_params : []
             content {
               mode  = query_params.value.mode
               value = query_params.value.value
