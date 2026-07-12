@@ -1,3 +1,7 @@
+output "api_management_api_diagnostics_id" {
+  description = "Map of id values across all api_management_api_diagnostics, keyed the same as var.api_management_api_diagnostics"
+  value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => v.id }
+}
 output "api_management_api_diagnostics_always_log_errors" {
   description = "Map of always_log_errors values across all api_management_api_diagnostics, keyed the same as var.api_management_api_diagnostics"
   value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => v.always_log_errors }
