@@ -20,19 +20,19 @@ output "api_management_api_diagnostics_api_name" {
 }
 output "api_management_api_diagnostics_backend_request" {
   description = "Map of backend_request values across all api_management_api_diagnostics, keyed the same as var.api_management_api_diagnostics"
-  value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => v.backend_request if v.backend_request != null && length(v.backend_request) > 0 }
+  value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => one(v.backend_request) if v.backend_request != null && length(v.backend_request) > 0 }
 }
 output "api_management_api_diagnostics_backend_response" {
   description = "Map of backend_response values across all api_management_api_diagnostics, keyed the same as var.api_management_api_diagnostics"
-  value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => v.backend_response if v.backend_response != null && length(v.backend_response) > 0 }
+  value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => one(v.backend_response) if v.backend_response != null && length(v.backend_response) > 0 }
 }
 output "api_management_api_diagnostics_frontend_request" {
   description = "Map of frontend_request values across all api_management_api_diagnostics, keyed the same as var.api_management_api_diagnostics"
-  value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => v.frontend_request if v.frontend_request != null && length(v.frontend_request) > 0 }
+  value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => one(v.frontend_request) if v.frontend_request != null && length(v.frontend_request) > 0 }
 }
 output "api_management_api_diagnostics_frontend_response" {
   description = "Map of frontend_response values across all api_management_api_diagnostics, keyed the same as var.api_management_api_diagnostics"
-  value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => v.frontend_response if v.frontend_response != null && length(v.frontend_response) > 0 }
+  value       = { for k, v in azurerm_api_management_api_diagnostic.api_management_api_diagnostics : k => one(v.frontend_response) if v.frontend_response != null && length(v.frontend_response) > 0 }
 }
 output "api_management_api_diagnostics_http_correlation_protocol" {
   description = "Map of http_correlation_protocol values across all api_management_api_diagnostics, keyed the same as var.api_management_api_diagnostics"
